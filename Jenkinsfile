@@ -18,7 +18,7 @@ pipeline {
             steps {
                 
                 echo 'hello'
-                chmod 777 deploy.sh
+                sh 'chmod 777 deploy.sh'
                 sh './deploy.sh'
                 
                  //sh 'scp deploy.sh ${REMOTE_USER}@${REMOTE_HOST}:~/'
