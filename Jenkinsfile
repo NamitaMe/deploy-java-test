@@ -3,7 +3,7 @@ pipeline {
     
     agent any 
     env{
-        DOCKER_IMAGE = namiducker/java-test:2.0.0
+        DOCKER_IMAGE = 'namiducker/java-test:2.0.0'
     }
     
     stages{
