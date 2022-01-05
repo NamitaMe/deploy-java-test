@@ -2,11 +2,16 @@ def dockerRun ='docker run -p 8080:8080 -d --name java-test namiducker/java-test
 pipeline {
     
     agent any 
+    env{
+        DOCKER_IMAGE = namiducker/java-test:2.0.0
+    }
     
     stages{
         stage ('pull image from dockerhub'){
             steps{
-                sh 'docker pull namiducker/java-test:2.0.0'
+                echo 'Starting to deploy docker image..'
+                sh ' docker pull $DOCKER_IMAGE'
+                //sh 'docker pull namiducker/java-test:2.0.0'
             }
         }
         stage ('Run container on dev server'){
