@@ -6,7 +6,7 @@ pipeline {
     stages{
         stage ('pull image from dockerhub'){
             steps{
-                sh 'docker push namiducker/java-test:2.0.0'
+                sh 'docker pull namiducker/java-test:2.0.0'
             }
         }
         stage ('Run container on dev server'){
