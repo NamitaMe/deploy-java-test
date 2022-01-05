@@ -5,13 +5,16 @@ pipeline {
     
     stages{
         stage ('pull image from dockerhub'){
+            steps{
+                sh 'docker push namiducker/java-test:2.0.0'
+            }
         }
         stage ('Run container on dev server'){
             steps {
                 
-                sshagent(['centosprivatekey']) {
+                //sshagent(['centosprivatekey']) {
                    
-                    sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.3.215 ${dockerRun}"
+                    //sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.3.215 ${dockerRun}"
                 }
             }
         }
