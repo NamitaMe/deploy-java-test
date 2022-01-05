@@ -18,7 +18,7 @@ pipeline {
             steps {
                 
                 echo 'hello'
-                sh 'ssh ec2-user@$54.193.182.3 ./deploy.ssh'
+                sh './deploy.ssh'
                 
                  //sh 'scp deploy.sh ${REMOTE_USER}@${REMOTE_HOST}:~/'
                  //sh 'ssh ${REMOTE_USER}@${REMOTE_HOST} "chmod +x deploy.sh"'
