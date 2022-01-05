@@ -2,7 +2,7 @@ def dockerRun ='docker run -p 8080:8080 -d --name java-test namiducker/java-test
 pipeline {
     
     agent any 
-    env{
+    environment{
         DOCKER_IMAGE = 'namiducker/java-test:2.0.0'
     }
     
