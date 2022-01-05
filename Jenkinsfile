@@ -14,14 +14,14 @@ pipeline {
                 //sh 'docker pull namiducker/java-test:2.0.0'
             }
         }
-        stage ('Run container on dev server'){
+        stage ('deploy to server'){
             steps {
                 
-                echo 'hello'
+                 echo 'hello'
                 
-                //sshagent(['centosprivatekey']) {
-                   
-                    //sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.3.215 ${dockerRun}"
+                 sh 'scp deploy.sh ${REMOTE_USER}@${REMOTE_HOST}:~/'
+                 sh 'ssh ${REMOTE_USER}@${REMOTE_HOST} "chmod +x deploy.sh"'
+                 sh 'ssh ${REMOTE_USER}@${REMOTE_HOST} ./deploy.ssh'
                 }
             }
         }
