@@ -17,11 +17,12 @@ pipeline {
         stage ('deploy to server'){
             steps {
                 
-                 echo 'hello'
+                echo 'hello'
+                sh 'ssh ec2-user@$54.193.182.3 ./deploy.ssh'
                 
-                 sh 'scp deploy.sh ${REMOTE_USER}@${REMOTE_HOST}:~/'
-                 sh 'ssh ${REMOTE_USER}@${REMOTE_HOST} "chmod +x deploy.sh"'
-                 sh 'ssh ${REMOTE_USER}@${REMOTE_HOST} ./deploy.ssh'
+                 //sh 'scp deploy.sh ${REMOTE_USER}@${REMOTE_HOST}:~/'
+                 //sh 'ssh ${REMOTE_USER}@${REMOTE_HOST} "chmod +x deploy.sh"'
+                 //sh 'ssh ${REMOTE_USER}@${REMOTE_HOST} ./deploy.ssh'
                 }
             }
         }
