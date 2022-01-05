@@ -4,6 +4,8 @@ pipeline {
     agent any 
     
     stages{
+        stage ('pull image from dockerhub'){
+        }
         stage ('Run container on dev server'){
             steps {
                 
